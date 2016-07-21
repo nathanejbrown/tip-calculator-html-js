@@ -4,7 +4,8 @@ $(document).ready(function() {
   $('form').on('submit', function(event) {
     event.preventDefault();
     var initialTotal = parseFloat($('#number').val());
-    var grandTotal = initialTotal + (initialTotal * (0.2));
+    var tipAmount = initialTotal * $('#pickPercent').val();
+    var grandTotal = initialTotal + tipAmount;
     $('.result').append('Your total after tip is: $' + grandTotal);
   });
 });
